@@ -1,13 +1,14 @@
 import ExpenseItem from "./ExpenseItem";
 
-function Expenses() {
+function Expenses(args) {
 
     return (
         <div>
-            <ExpenseItem date = "30 March 2023" item = "Car Insurance" price = "Rs 5000"></ExpenseItem>
-            <ExpenseItem date = "30 April 2023" item = "Netflix Subscription" price = "Rs 7000"></ExpenseItem>
-            <ExpenseItem date = "30 May 2023" item = "Mobile Recharge" price = "Rs 2000"></ExpenseItem>
-
+            <ExpenseItem expense={args.items[0]}></ExpenseItem>
+            <ExpenseItem expense={args.items[1]}></ExpenseItem>
+            <ExpenseItem expense={args.items[2]}></ExpenseItem>
+            <ExpenseItem expense={args.items[3]}></ExpenseItem>
+            <ExpenseItem expense={args.items[4]}></ExpenseItem>
         </div>
     );
 }
