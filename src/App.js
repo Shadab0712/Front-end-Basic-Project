@@ -1,42 +1,40 @@
-import './App.css';
-import Expenses from './components/Expenses';
+import React, { useState } from 'react';
+
+import Expenses from './components/Expenses/Expenses';
+import ExpenseForm from './components/NewExpense/ExpenseForm';
+import './components/NewExpense/NewExpense.css';
 
 function App() {
 
   const expenses = [
     {
-      date: "2023-08-30",
-      item: "Car Insurance",
-      price: "Rs 5000"
+      id: 'e1',
+      title: 'Bike Insurance',
+      amount: 5000,
+      date: new Date(2020, 7, 14),
     },
     {
-      date: "2023-09-30",
-      item: "Bike Insurance",
-      price: "Rs 6000"
-    },
-    {
-      date: "2023-10-30",
-      item: "Aeroplane Insurance",
-      price: "Rs 7000"
-    },
-    {
-      date: "2023-11-30",
-      item: "Helicopter Insurance",
-      price: "Rs 8000"
-    },
-    {
-      date: "2023-08-30",
-      item: "Jet Insurance",
-      price: "Rs 9000"
-    },
+      id: 'e2',
+      title: 'Car Insurance',
+      amount: 10000,
+      date: new Date(2021, 7, 14),
+    }
   ];
 
+  const [expenseArray, setExpenseArray] = useState(expenses);
+
+  const expenseHandler = (expense) => {
+    setExpenseArray([...expenseArray, expense]);
+  };
+
   return (
-    <div className="App">
-      <Expenses items={expenses}></Expenses>
+    <div>
+      <div className='new-expense'>
+        <ExpenseForm onExpense={expenseHandler} />
+      </div>
+      <Expenses items={expenseArray} />
     </div>
   );
-
 }
 
 export default App;
