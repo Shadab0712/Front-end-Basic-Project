@@ -1,3 +1,3 @@
-# Getting along with the form concept
+# Getting along with the Form concept in frond-end.
 
-#### Concept of adding more details in the front end project dynamically 
+#### Concept of adding more details in the Array (objects) front end project dynamically and displaying it on the host server.
